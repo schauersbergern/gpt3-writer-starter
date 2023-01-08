@@ -53,7 +53,7 @@ const Home = () => {
       </div>
       <div className="prompt-container">
         <textarea
-          placeholder="start typing here"
+          placeholder="Gib hier den ersten Text ein, den die Frau geschrieben hat. Nachdem du eine Antwort generiert hast führe die Konversation mit 'Frau: (Antwort der Frau)' fort."
           className="prompt-box"
           value={userInput + apiOutput}
           onChange={onUserChangedText}
@@ -64,32 +64,19 @@ const Home = () => {
             onClick={callGenerateEndpoint}
           >
             <div className="generate">
-              {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
+              {isGenerating ? <span className="loader"></span> : <p>Antwort generieren</p>}
             </div>
           </a>
         </div>
-        {apiOutput && (
-          <div className="output">
-            <div className="output-header-container">
-              <div className="output-header">
-                <h3>Output</h3>
-              </div>
-            </div>
-            <div className="output-content">
-              <p>{apiOutput}</p>
-            </div>
-          </div>
-        )}
       </div>
       <div className="badge-container grow">
         <a
-          href="https://buildspace.so/builds/ai-writer"
+          href="https://www.schauersberger.software/"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+            <p>build by Schauersberger Softwaredesign</p>
           </div>
         </a>
       </div>
