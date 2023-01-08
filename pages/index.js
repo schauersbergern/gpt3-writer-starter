@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>GPT-3 Writer | buildspace</title>
+        <title>GPT-3 based conversation and flirt assistant</title>
       </Head>
       <div className="container">
         <div className="header">
