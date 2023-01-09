@@ -26,13 +26,12 @@ const Home = () => {
     const { output } = data;
     console.log("OpenAI replied...", output.text)
 
-    setApiOutput(`\n\nIch: ${output.text.replace(/\s+/g, ' ').replace('Ich:', '').trim()}`);
+    setApiOutput(`\n\nMe: ${output.text.replace(/\s+/g, ' ').replace('Me:', '').trim()}`);
     setIsGenerating(false);
   }
 
   const onUserChangedText = (event) => {
     setApiOutput("");
-    console.log(event.target.value);
     setUserInput(event.target.value);
   };
 
@@ -53,7 +52,7 @@ const Home = () => {
       </div>
       <div className="prompt-container">
         <textarea
-          placeholder="Gib hier den ersten Text ein, den die Frau geschrieben hat. Nachdem du eine Antwort generiert hast führe die Konversation mit 'Frau: (Antwort der Frau)' fort."
+          placeholder="Enter the first text here that the woman wrote. After generating a reply, continue the conversation with 'Her: (woman's reply)'."
           className="prompt-box"
           value={userInput + apiOutput}
           onChange={onUserChangedText}
@@ -64,7 +63,7 @@ const Home = () => {
             onClick={callGenerateEndpoint}
           >
             <div className="generate">
-              {isGenerating ? <span className="loader"></span> : <p>Antwort generieren</p>}
+              {isGenerating ? <span className="loader"></span> : <p>Generate</p>}
             </div>
           </a>
         </div>
